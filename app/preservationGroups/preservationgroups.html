@@ -1,0 +1,34 @@
+<p>Listing all preservation groups.</p>
+
+
+
+<!-- use angular tables to display user object coming back from the server  -->
+<div>
+
+  <table class="table table-bordered bordered table-striped table-condensed datatable ng-cloak"  datatable="ng" dt-options="vm.dtOptions">
+    <thead>
+    <tr>
+      <th>preservation group name</th>
+      <th>preservation group permission</th>
+      <th>preservation group permission</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="group in preservationgroups">
+      <td>{{group.group_name}}</td>
+
+      <td ng-repeat="permission in group.group_permissions"><span>{{permission.permission_level}}</span> </td>
+
+
+    </tr>
+
+    </tbody>
+
+  </table>
+
+
+
+</div>
+
