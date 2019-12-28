@@ -1,0 +1,34 @@
+<p>Listing all business units.</p>
+
+
+
+<!-- use angular tables to display user object coming back from the server  -->
+<div>
+
+    <table class="table table-bordered bordered table-striped table-condensed datatable ng-cloak"  datatable="ng" dt-options="vm.dtOptions">
+        <thead>
+        <tr>
+            <th>business unit name</th>
+            <th>organization code</th>
+            <th>ldap group name</th>
+            <th>business unit preferences</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="unit in businessunits">
+            <td>{{unit.business_unit_name}}</td>
+            <td>{{unit.org_code}}</td>
+            <td>{{unit.ldap_name}}</td>
+            <td ng-repeat="preference in unit.business_unit_Preferences"><span>{{preference.configuration_value}}</span> </td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+</div>
