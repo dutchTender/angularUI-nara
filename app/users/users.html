@@ -1,0 +1,34 @@
+<p>Listing all users.</p>
+
+
+
+<!-- use angular tables to display user object coming back from the server  -->
+<div>
+
+    <table class="table table-bordered bordered table-striped table-condensed datatable ng-cloak"  datatable="ng" dt-options="vm.dtOptions">
+        <thead>
+        <tr>
+            <th>user name</th>
+            <th>user type</th>
+            <th>user role</th>
+            <th>business unit</th>
+            <th>preservation group</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{user.user_name}}</td>
+            <td>{{user.user_type}}</td>
+            <td ng-repeat="role in user.user_roles"><span>{{role.role_name}}</span> </td>
+            <td ng-repeat="bu in user.business_units"><span>{{bu.business_unit_name}}</span> </td>
+            <td ng-repeat="pg in user.preservation_groups"><span>{{pg.group_name}}</span> </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+</div>
