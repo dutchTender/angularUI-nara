@@ -16,3 +16,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
 
 }]);
+
+
+
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
